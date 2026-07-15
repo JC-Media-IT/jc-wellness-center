@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JC Wellness Center - คณะวารสารศาสตร์และสื่อสารมวลชน</title>
+
+  <link rel="icon" href="https://quota.jc.tu.ac.th/images/jc_logo.png" type="image/png">
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- FontAwesome (Icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- SweetAlert2 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  
+  <!-- Google Fonts: Noto Sans Thai -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    html, body {
+      height: 100%;
+    }
+    body {
+      font-family: "Noto Sans Thai", sans-serif;
+      background-color: #f8f9fa;
+      padding-top: 80px; 
+      /* ทำให้ Footer ชิดขอบล่างเสมอ */
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .bg-theme { background-color: #743d88; }
+    .text-theme { color: #743d88; }
+    .btn-theme {
+      background-color: #743d88;
+      color: white;
+      transition: all 0.3s ease;
+    }
+    .btn-theme:hover {
+      background-color: #5a2d6b;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* Navbar Styles */
+    .brand-container { display: flex; align-items: center; text-decoration: none; color: white; }
+    .brand-logo { width: 40px; margin-right: 10px; }
+    .brand-text h4 { margin: 0; font-size: 1.2rem; font-weight: 700; }
+    
+    /* Footer Link */
+    .footer-link {
+      color: #743d88;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .footer-link:hover {
+      color: #5a2d6b;
+      text-decoration: underline;
+    }
+
+    /* Card Hover Effects */
+    .menu-card {
+      border: none;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      height: 100%;
+    }
+    .menu-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(116, 61, 136, 0.15);
+    }
+    .card-icon {
+      font-size: 3rem;
+      color: #743d88;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-theme shadow fixed-top">
+    <div class="container-fluid px-3 px-lg-4"> 
+      <a class="brand-container me-auto" href="#">
+        <img src="https://quota.jc.tu.ac.th/images/jc_logo.png" alt="JC Logo" class="brand-logo">
+        <div class="brand-text">
+          <h4>JC Wellness Center</h4>
+          <small>คณะวารสารศาสตร์และสื่อสารมวลชน</small>
+        </div>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container flex-grow-1 my-5">
+    
+    <!-- แนะนำโครงการ -->
+    <div class="row justify-content-center mb-5 text-center">
+      <div class="col-lg-8">
+        <h2 class="fw-bold text-theme mb-3">ยินดีต้อนรับสู่ JC Wellness Center</h2>
+        <p class="text-muted fs-5">
+          ศูนย์รวมการดูแลสุขภาพใจสำหรับบุคลากรและนักศึกษาคณะวารสารศาสตร์ฯ 
+          เราพร้อมให้คำปรึกษาและสนับสนุนให้คุณมีสุขภาวะทางจิตใจที่ดีในทุกๆ วัน
+        </p>
+      </div>
+    </div>
+
+    <!-- 3 Menu Cards -->
+    <div class="row g-4 justify-content-center">
+      
+      <!-- เมนูที่ 1: ระบบประเมินความเครียด DASS-21 -->
+      <div class="col-md-4">
+        <div class="card menu-card p-4 text-center">
+          <div class="card-body d-flex flex-column">
+            <i class="fas fa-heart-pulse card-icon"></i>
+            <h4 class="card-title fw-bold">ระบบแบบประเมินสุขภาพใจ</h4>
+            <p class="card-text text-muted mb-4">แบบประเมิน DASS-21 เพื่อสำรวจสภาวะอารมณ์ ความเครียด และความวิตกกังวลของคุณ</p>
+            <a href="#" id="menu-1-btn" class="btn btn-theme mt-auto py-2 rounded-pill fw-bold">
+              เข้าสู่ระบบประเมิน
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- เมนูที่ 2: ระบบนัดหมายผู้เชี่ยวชาญ -->
+      <div class="col-md-4">
+        <div class="card menu-card p-4 text-center">
+          <div class="card-body d-flex flex-column">
+            <i class="fas fa-calendar-check card-icon"></i>
+            <h4 class="card-title fw-bold">ระบบนัดหมายผู้เชี่ยวชาญ</h4>
+            <p class="card-text text-muted mb-4">นัดหมายวันและเวลาเพื่อรับคำปรึกษาจากนักจิตวิทยา หรือผู้เชี่ยวชาญด้านสุขภาพใจ</p>
+            <button class="btn btn-secondary mt-auto py-2 rounded-pill fw-bold btn-pending">
+              อยู่ระหว่างดำเนินการ
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- เมนูที่ 3: ติดตามข่าวสาร -->
+      <div class="col-md-4">
+        <div class="card menu-card p-4 text-center">
+          <div class="card-body d-flex flex-column">
+            <i class="fas fa-newspaper card-icon"></i>
+            <h4 class="card-title fw-bold">ข่าวสารสุขภาพใจ</h4>
+            <p class="card-text text-muted mb-4">อัปเดตกิจกรรม บทความดีๆ และข่าวสารที่เป็นประโยชน์ต่อการดูแลสุขภาพใจของคุณ</p>
+            <button class="btn btn-secondary mt-auto py-2 rounded-pill fw-bold btn-pending">
+              อยู่ระหว่างดำเนินการ
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-top mt-auto py-4">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 text-center text-lg-start mb-2 mb-lg-0">
+          <p class="mb-0 text-muted small">
+            Copyright © 2026 <strong>Faculty of Journalism and Mass Communication</strong>,<br>
+            Thammasat University. All rights reserved.
+          </p>
+        </div>
+        <div class="col-lg-6 text-center text-lg-end">
+          <p class="mb-0 text-muted small">
+            Powered by 
+            <a href="https://jc.tu.ac.th/th/personnel/staff#committee_214" target="_blank" class="footer-link">
+              งานเทคโนโลยีดิจิทัลและการสื่อสาร
+            </a>
+          </p>
+          <p class="mb-0 text-muted small mt-2">
+            <span style="font-size: 0.9rem; color: #6c757d;">พบปัญหาการใช้งาน?: (Click ที่ไอคอน Line)</span><br>
+            <a href="https://line.me/R/ti/p/@dxx9496i?ts=01061636&oat_content=url" 
+               target="_top" 
+               class="text-decoration-none fw-bold"
+               style="color: #00B900;"> 
+               <i class="fab fa-line fa-lg"></i> แจ้งที่ Line OA: JC Service Center
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- SweetAlert2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // --- 1. ฟังก์ชันตรวจจับอุปกรณ์เบื้องต้น ---
+    function isIOS() {
+      return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    }
+
+    function isInAppBrowser() {
+      const ua = navigator.userAgent || navigator.vendor || window.opera;
+      return /FBAN|FBAV|Line/i.test(ua);
+    }
+
+    // --- 2. ตั้งค่าลิงก์สำหรับเมนู DASS-21 ---
+    function setupMenu1Link() {
+      const btn = document.getElementById('menu-1-btn');
+      
+      // ลิงก์ปลายทาง (GAS ของระบบ DASS-21)
+      const targetUrl = 'https://script.google.com/a/macros/jc.tu.ac.th/s/AKfycbwQlmzLb6ZRr4VtrjK517CMg3dsiY9YC0rz1atYuWpUTMxysPNRRPgtzvAoc5YB5mJcDQ/exec'; 
+
+      // บังคับเปิด Safari หากเป็น iOS + In-App Browser
+      if (isIOS() && isInAppBrowser()) {
+        btn.href = 'x-safari-' + targetUrl;
+      } else {
+        btn.href = targetUrl;
+      }
+    }
+
+    // --- 3. การทำงานเมื่อกดปุ่ม DASS-21 ---
+    document.getElementById('menu-1-btn').addEventListener('click', function(e) {
+      e.preventDefault(); 
+      const targetUrl = this.href; 
+
+      // แสดง Loading อนิเมชัน
+      Swal.fire({
+        title: 'กำลังพาท่านเข้าสู่ระบบ',
+        html: 'กรุณารอสักครู่...',
+        allowOutsideClick: false, 
+        allowEscapeKey: false,
+        color: '#743d88',
+        didOpen: () => {
+          Swal.showLoading(); 
+        }
+      });
+
+      // หน่วงเวลา 600ms แล้ว Redirect
+      setTimeout(() => {
+        window.location.href = targetUrl;
+      }, 600);
+    });
+
+    // --- 4. การทำงานเมื่อกดปุ่มที่ยังไม่พร้อมใช้งาน (เมนู 2 และ 3) ---
+    const pendingBtns = document.querySelectorAll('.btn-pending');
+    pendingBtns.forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        Swal.fire({
+          icon: 'info',
+          title: 'อยู่ระหว่างดำเนินการ',
+          text: 'ระบบนี้กำลังอยู่ระหว่างการพัฒนาโดยทีมงาน จะพร้อมให้บริการในเร็วๆ นี้ครับ',
+          confirmButtonColor: '#743d88',
+          confirmButtonText: 'รับทราบ'
+        });
+      });
+    });
+
+    // --- 5. จัดการเมื่อกด Back กลับมาหน้านี้ ---
+    window.addEventListener('pageshow', function(event) {
+      Swal.close(); 
+    });
+
+    // เรียกใช้งานเมื่อโหลดหน้าเสร็จ
+    document.addEventListener("DOMContentLoaded", () => {
+      setupMenu1Link();
+    });
+  </script>
+</body>
+</html>
